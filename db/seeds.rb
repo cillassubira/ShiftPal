@@ -34,7 +34,7 @@ users = User.create([
   {name: 'Pablo', alias: 'PGA', email: 'pga@example.com', password: '12345678', password_confirmation: '12345678'}
 ])
 
-def rosterpair (user1, user2, first_day, last_day )
+def rosterpair (user1, user2, first_day, last_day)
 	shift_num = 1
 	(first_day..last_day).each_with_index do |day, index|
 		unless (shift_num>5)
@@ -58,28 +58,6 @@ rosterpair(5,6, Date.new(2016, 05, 26), Date.new(2016, 06, 30))
 rosterpair(7,8, Date.new(2016, 05, 28), Date.new(2016, 06, 30))
 rosterpair(9,10, Date.new(2016, 05, 30), Date.new(2016, 06, 30))
 
-# (day1..day30).each_with_index do |day, index|
-# 	unless (shift_num>5)
-# 		Shift.create([
-# 			{shift_slot_id: shift_num, day: day, user_id: 1},
-# 			{shift_slot_id: shift_num, day: day, user_id: 2},
-# 			{shift_slot_id: shift_num+4, day: day, user_id: 3},
-# 			{shift_slot_id: shift_num+4, day: day, user_id: 4},
-# 			{shift_slot_id: shift_num+3, day: day, user_id: 5},
-# 			{shift_slot_id: shift_num+3, day: day, user_id: 6},
-# 			{shift_slot_id: shift_num+2, day: day, user_id: 7},
-# 			{shift_slot_id: shift_num+2, day: day, user_id: 8},
-# 			{shift_slot_id: shift_num+1, day: day, user_id: 9},
-# 			{shift_slot_id: shift_num+1, day: day, user_id: 10}
-# 			])
-# 		if (index%2!=0)
-# 			shift_num = shift_num +1
-# 		end
-# 	end
-# 	if (shift_num==6)
-# 		shift_num =1
-# 	end
-# end
 
 shifts = Shift.where(shift_slot_id: 5).update_all(shift_slot_id:4)
 
