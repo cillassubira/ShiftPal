@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
+  root 'landing_page#index'
   devise_for :users
 
   resources :users do 
     resources :shifts
+    resources :requests
+
   end
+
+
+  get 'shifts/:date', to: 'shifts#people'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
