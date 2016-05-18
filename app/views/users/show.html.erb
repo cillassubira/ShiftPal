@@ -1,0 +1,20 @@
+<table>
+  <thead>
+    <tr>
+      <th>Day</th>
+      <th>Slot</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @shifts.each do |shift| %>
+      <tr>
+        <td><%= shift.day %></td>
+        <td><%= shift.shift_slot_id %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
