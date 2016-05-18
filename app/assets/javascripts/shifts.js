@@ -6,12 +6,7 @@ function displayShiftInfo (shiftDate){
 		type: 'GET',
 		url: '/shifts/' +  shiftDate,
 		dataType: 'json',
-		success: handleShiftInfoResponse
-		
-		// error: function(response){
-		// 	console.log(response)
-		// }
-		
+		success: handleShiftInfoResponse		
 	})
 }
 
@@ -29,7 +24,10 @@ function handleShiftInfoResponse (response){
 	console.log('holaquease')
 		console.log($('.js-shift-date').val().html)
 		$('.js-display-day-info').append(
-			"<a class='waves-effect waves-light btn'><i class='material-icons right'>swap_horiz</i>Change Shift</a>")
+
+			"<a class='waves-effect waves-light btn'><i class='material-icons right'>swap_horiz</i>Change Shift</a>");
+
+		//<%= link_to "Change Shift", user_request_path(id: @shift.id), :class => "btn btn-default btn-lg" %>
 	};
 		
 }

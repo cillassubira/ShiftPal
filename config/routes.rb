@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   root 'landing_page#index'
+
   devise_for :users
 
-  resources :users do 
+  resources :users, except: :show do 
     resources :shifts
     resources :requests
 

@@ -1,12 +1,13 @@
 class ShiftsController < ApplicationController
 	def index
-	  user = User.find(params[:user_id])
-		@shifts = user.shifts
+	  @user = User.find(params[:user_id])
+	  @user_id = params[:user_id]
+	  @shifts = @user.shifts
 	end
 
 	def show
-		user = User.find(params[:user_id])
-		@shift = params[:id]
+		@user = User.find(params[:user_id])
+		@shift = Shift.find(params[:id])
 	end
 
 	def people
