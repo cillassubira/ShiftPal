@@ -1,36 +1,21 @@
 <body>
-<div class= 'container'>
-<div class="row">
-      <div class="col s8">
-      <%= month_calendar do |date| %>
-
-  <p class = "display-day"><%= date.mday %></p>
-
-  <%if  @shifts.find_by(day: date).class == Shift %>
-  <p>Hoy trabajas:</p>
-  <%= hello = @shifts.find_by(day: date).shift_slot_id %>
-    <p hidden class="js-shift-date"><%= date %></p>
-  <%= @shifts.find_by(day: date).id %>
-  <%end %>
-<% end %>
-</div>
-    <div class="col s4">
-    <%= render "/partials/shift_card" %>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col s8">
-	    <ul class="collection">
-      		<li class="collection-item">
-      		<i class="material-icons morning">av_timer</i>
-      		Morning Shift</li>
-      		<li class="collection-item"><i class="material-icons afternoon">av_timer</i>Afternoon Shift</li>
-      		<li class="collection-item"><i class="material-icons night">av_timer</i>Night Shift</li>
-    	</ul>
-    </div>
-
-</div>
-
+<div class= "container">
+	<div class="row">
+  		<div class="col s8">
+      	<%= month_calendar do |date| %>
+  			<p class = "display-day"><%= date.mday %></p>
+  			<%if  @shifts.find_by(day: date).class == Shift %>
+  				<p>Hoy trabajas:</p>
+  				<%= hello = @shifts.find_by(day: date).slot %>
+    			<p hidden class="js-shift-date"><%= date %>
+    				<%= @shifts.find_by(day: date).id %></p>		
+  			<%end %>
+		<% end %>
+		</div>
+   		<div class="col s4">
+    		<%= render "/partials/shift_card" %>
+    		<%= render "/partials/key_card" %>
+    	</div>
+	</div>
 </div>
 </body>

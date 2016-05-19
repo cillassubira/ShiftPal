@@ -13,11 +13,7 @@ class ShiftsController < ApplicationController
 	def people
 		@date = params[:date]
 		@shifts = Shift.where(day: @date)
-		@shifts.where(shift_slot_id: 2)
-		# respond_to do |format|
-		# #format.html{}
-		# 	format.json{'hi'}
-		# end
+		@shifts.where(slot: "Morning")
 		render json: @shifts
 	end
 

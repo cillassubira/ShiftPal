@@ -5,8 +5,7 @@ class CreateRequests < ActiveRecord::Migration
       t.belongs_to :user_answering
       t.belongs_to :shift_requested
       t.belongs_to :shift_answering
-      t.belongs_to :request_status
-
+      t.integer :status
       t.timestamps null: false
     end
   end

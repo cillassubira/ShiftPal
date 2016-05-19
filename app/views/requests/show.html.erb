@@ -9,7 +9,7 @@
       			<p class= "secondary-content">
       			<%= @shift_to_be_changed.day.strftime("%A") %><br>
       			<%= @shift_to_be_changed.day %><br>
-         		<%= ShiftSlot.find(@shift_to_be_changed.shift_slot_id).slot %>
+         		<%= @shift_to_be_changed.slot %>
             </p>
     		</li>
         <% @available_requests.each do |available_request| %>
@@ -17,7 +17,7 @@
       			<i class="material-icons circle">folder</i>
       			<span class="title"><%= User.find(available_request.user_id).alias %></span>
       			<p><%= available_request.day.strftime("%A") %>: <%= available_request.day %><br>
-         		<%= available_request.shift_slot_id %>
+         		<%= available_request.slot %>
       			</p>
         <div class=" secondary-content switch">
         <label>
