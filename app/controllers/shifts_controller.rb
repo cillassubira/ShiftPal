@@ -1,9 +1,7 @@
 class ShiftsController < ApplicationController
-
-	
+	before_action :authenticate_user! 
 	def index
-	  @user = User.find(params[:user_id])
-	  @user_id = params[:user_id]
+	  @user = User.find(current_user.id)
 	  @shifts = @user.shifts
 	end
 
