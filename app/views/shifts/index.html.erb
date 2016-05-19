@@ -6,9 +6,11 @@
   			<p class = "display-day"><%= date.mday %></p>
   			<%if  @shifts.find_by(day: date).class == Shift %>
   				<p>Hoy trabajas:</p>
-  				<%= hello = @shifts.find_by(day: date).slot %>
-    			<p hidden class="js-shift-date"><%= date %>
-    				<%= @shifts.find_by(day: date).id %></p>		
+          <p hidden class="js-shift-slot">%= @shifts.find_by(day: date).slot %></p>
+  				<%=  @shifts.find_by(day: date).slot %>
+    			<p hidden class="js-shift-date"><%= date %></p>
+          <p hidden class="js-shift-id">
+          <%= @shifts.find_by(day: date).id %></p>
   			<%end %>
 		<% end %>
 		</div>

@@ -8,13 +8,14 @@ class ShiftsController < ApplicationController
 	def show
 		@user = User.find(params[:user_id])
 		@shift = Shift.find(params[:id])
+		render json: @shift
 	end
 
-	def people
-		@date = params[:date]
-		@shifts = Shift.where(day: @date)
-		@shifts.where(slot: "Morning")
-		render json: @shifts
-	end
+	# def people
+	# 	@date = params[:date]
+	# 	@shifts = Shift.where(day: @date)
+	# 	@shifts.where(slot: "Morning")
+	# 	render json: @shifts
+	# end
 
 end
