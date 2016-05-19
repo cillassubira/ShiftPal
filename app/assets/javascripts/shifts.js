@@ -28,16 +28,19 @@ function handleShiftInfoResponse (response){
 			"<a class='waves-effect waves-light btn'><i class='material-icons right'>swap_horiz</i>Change Shift</a>");
 
 		//<%= link_to "Change Shift", user_request_path(id: @shift.id), :class => "btn btn-default btn-lg" %>
+
+
 	};
 		
 }
+
+
 
 $(document).on('ready',function(){
 	$(this).find('.day').on('click', function(event) {
   		event.preventDefault();
   		var shiftDate = $(this).find('p.js-shift-date').text();
-	    console.log(shiftDate.toString());
-	    console.log(shiftDate.toString().type);
+	    console.log(shiftDate);
 	    displayShiftInfo(shiftDate);
 
 	   $('.js-display-day').html(shiftDate);
@@ -45,8 +48,5 @@ $(document).on('ready',function(){
 
 
 	});
-	$(this).find('.js-button-request').on('click', function(event){
 
-	})
-});
 
