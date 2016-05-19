@@ -48,5 +48,5 @@ $(document).on('ready',function(){
 
 
 	});
-
+});
 

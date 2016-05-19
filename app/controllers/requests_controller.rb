@@ -8,21 +8,12 @@ class RequestsController < ApplicationController
 	end
 
 	def show
-		#Requests availables para un turno en concreto
-		#Busco dia que se quiere cambiar y tipo de turno
-		
 		@shift_to_be_changed = Shift.find(params[:id])
 		@available_shifts = Request.calculate_free_shifts(@shift_to_be_changed)
 		@available_requests = Request.available_shifts_to_return(@available_shifts, @shift_to_be_changed)
 	end
 
-
 	private
-
-		  
-		
-
-
 
 
 end
