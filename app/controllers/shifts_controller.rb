@@ -1,4 +1,6 @@
 class ShiftsController < ApplicationController
+
+	
 	def index
 	  @user = User.find(params[:user_id])
 	  @user_id = params[:user_id]
