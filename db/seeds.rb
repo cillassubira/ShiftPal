@@ -6,19 +6,19 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-shift_slots = ShiftSlot.create([
-	{slot: 'M'},
-	{slot: 'A'},
-	{slot: 'N'},
-	{slot: 'F'},
-	{slot: 'F'}
-	])
+# shift_slots = ShiftSlot.create([
+# 	{slot: 'M'},
+# 	{slot: 'A'},
+# 	{slot: 'N'},
+# 	{slot: 'F'},
+# 	{slot: 'F'}
+# 	])
 
-request_statuses = RequestStatus.create([
-	{status: 'Requested'},
-	{status: 'Accepted'},
-	{status: 'Cancelled'}
-	])
+# request_statuses = RequestStatus.create([
+# 	{status: 'Requested'},
+# 	{status: 'Accepted'},
+# 	{status: 'Cancelled'}
+# 	])
 
 
 users = User.create([
@@ -39,8 +39,8 @@ def rosterpair (user1, user2, first_day, last_day)
 	(first_day..last_day).each_with_index do |day, index|
 		unless (shift_num>5)
 			Shift.create([
-				{shift_slot_id: shift_num, day: day, user_id: user1},
-				{shift_slot_id: shift_num, day: day, user_id: user2},
+				{slot: shift_num, day: day, user_id: user1},
+				{slot: shift_num, day: day, user_id: user2},
 				])
 			if (index%2!=0)
 				shift_num = shift_num +1
@@ -59,5 +59,5 @@ rosterpair(7,8, Date.new(2016, 05, 28), Date.new(2016, 06, 30))
 rosterpair(9,10, Date.new(2016, 05, 30), Date.new(2016, 06, 30))
 
 
-shifts = Shift.where(shift_slot_id: 5).update_all(shift_slot_id:4)
+shifts = Shift.where(slot: 5).update_all(slot:4)
 

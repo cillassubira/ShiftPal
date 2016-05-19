@@ -16,34 +16,22 @@ ActiveRecord::Schema.define(version: 20160516165602) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "request_statuses", force: :cascade do |t|
-    t.string   "status"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "requests", force: :cascade do |t|
     t.integer  "user_requesting_id"
     t.integer  "user_answering_id"
     t.integer  "shift_requested_id"
     t.integer  "shift_answering_id"
-    t.integer  "request_status_id"
+    t.integer  "status"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
-  end
-
-  create_table "shift_slots", force: :cascade do |t|
-    t.string   "slot"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "shifts", force: :cascade do |t|
     t.date     "day"
     t.integer  "user_id"
-    t.integer  "shift_slot_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.integer  "slot"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
