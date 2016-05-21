@@ -3,8 +3,11 @@
 // # You can use CoffeeScript in this file: http://coffeescript.org/
 
 
-$(document).on('ready',function(){
-
+$(document).on('ready',function(){   
+	$('.send-request-btn').on('click', function(event){
+		$(this).addClass('disabled');
+		$(this).text('Request sent!');
+	});
 });
 
 

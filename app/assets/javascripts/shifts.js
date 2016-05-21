@@ -26,12 +26,7 @@ function handleShiftInfoResponse (response){
 	// var coworkersDay = response.filter(function(obj){
 	// 	return obj.shift_slot_id == 2;
 	// });
-	// console.log(coworkersDay);
-	// console.log('holaquease')
-		
-//}
 }
-
 
 
 $(document).on('ready',function(){
@@ -46,20 +41,19 @@ $(document).on('ready',function(){
 	    console.log(shiftSlot);
 	    var shiftRequestUrl = "/users/" + userID + "/shifts/" + shiftId;
 	    console.log(shiftRequestUrl);
-	    var requestsUrl = "/users/" + userID + "/requests/" + parseInt(shiftId);
+	    var requestsUrl = "/users/" + userID + "/shifts/" + parseInt(shiftId);
 	    console.log("URL REQUESTS");
-	    console.log(requestsUrl)
+	    console.log(requestsUrl);
+
 	    //Ocultar botón para que no salga
 	 //    $('.js-display-day-info').append(
 		// "<a class='waves-effect waves-light btn'><i class='material-icons right'>swap_horiz</i>Change Shift</a>");
 		$('.js-display-day-info').append(
 			"<a href=" + requestsUrl + 
 			" class='waves-effect waves-light btn'><i class='material-icons right'>swap_horiz</i>Change Shift</a>");
-		displayShiftInfo(shiftRequestUrl);
-	   
+		//displayShiftInfo(shiftRequestUrl);
 
 
-
-	});
+	 });
 });
 
