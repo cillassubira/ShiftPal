@@ -5,13 +5,15 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :users, except: :show do 
-    resources :shifts
-    resources :requests
-
+    resources :shifts do
+      resources :requests
+    end
   end
 
+  get "/users/:user_id/requests", to: 'requests#inbox', as: :requests_inbox
+  get '/users/:user_id/requests/:id', to: 'requests#accept', as: :requests_accept
 
-  get 'shifts/:date', to: 'shifts#people'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

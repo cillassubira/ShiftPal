@@ -1,0 +1,29 @@
+<div class="container">
+<div class="row">
+    <div class="col s12">
+		<ul class="collection">
+		    <li class="collection-item avatar first">
+      			<h4>Available requests for:</h4>
+      			<p class= "secondary-content">
+      			<%= @shift_to_be_changed.day.strftime("%A") %><br>
+      			<%= @shift_to_be_changed.day %><br>
+         		<%= @shift_to_be_changed.slot %>
+            </p>
+    		</li>
+        <% @available_requests.each do |available_request| %>
+    		<li class="collection-item avatar">
+      			<i class="material-icons circle">folder</i>
+      			<span class="title"><%= User.find(available_request.user_id).alias %></span>
+      			<p><%= available_request.day.strftime("%A") %>: <%= available_request.day %><br>
+         		<%= available_request.slot %>
+      			</p>
+            <div class=" secondary-content">
+            <%= link_to "Send Request", user_shift_requests_path(:shift_id => @shift_to_be_changed.id, :shift_answering_id => available_request.id),:class => "btn waves-effect waves-light send-request-btn send-request-btn", :method => :post, remote: true %>
+            </div>
+        <% end %>
+        </li>
+		</ul>
+    <%= link_to "Go to inbox Requests", requests_inbox_path(:anchor => "requests_received"), :class => "btn waves-effect waves-light send-request-btn send-request-btn" %>
+    </div>
+</div>
+</div>

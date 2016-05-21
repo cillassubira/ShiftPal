@@ -5,57 +5,6 @@ class Request < ActiveRecord::Base
 	belongs_to :shift_answering, :class_name => 'Shift'
 	enum status: { Pending: 1, Accepted: 2, Cancelled: 3}
 
-	def self.calculate_free_shifts(shift)
-		free_shifts = Shift.where(day: shift.day, slot: 4)
-		available_requests = []
-		free_shifts.each do |possible_shift|
-			asked_user = possible_shift.user_id
-			case shift.slot
-				when "Morning" , "Afternoon"
-					possible_shift_before = Shift.find_by(day: shift.day - 1 , user_id: asked_user)
-						if possible_shift_before.slot != "Night"
-							available_requests.push(possible_shift)
-						end
-				when "Night"
-					possible_shift_after = Shift.find_by(day: shift.day + 1 , user_id: asked_user)
-					if possible_shift_after.slot != "Morning" || possible_shift_after.slot != "Afternoon"
-						available_requests.push(possible_shift)
-					end
-			end	
-		end
-		available_requests
-	end
-
-			def self.available_shifts_to_return(available_shifts, shift_to_be_changed)
-
-			available_requests = []
-			date1 = Date.new(2016,06,01)
-			date2 = Date.new(2016,06,15)
-			free_shifts_requesting_user = Shift.where(day: date1..date2, user_id: shift_to_be_changed.user_id, slot: 4)	
-		
-			available_shifts.each do |shift|
-			answering_user = shift.user_id
-				free_shifts_requesting_user.each do |possible_shift|
-					answering_user_shift =  Shift.find_by(day: possible_shift.day, user_id: shift.user_id)
-				
-				case answering_user_shift.slot
-					when "Morning" , "Afternoon"
-						possible_shift_before = Shift.find_by(day: answering_user_shift.day - 1 , user_id: shift_to_be_changed.user_id)
-							if possible_shift_before.slot != "Night"
-								available_requests.push(answering_user_shift)
-							end
-					when "Night"
-						possible_shift_after = Shift.find_by(day: answering_user_shift.day + 1 , user_id: shift_to_be_changed.user_id)
-						if possible_shift_after.slot != "Morning" || possible_shift_after.slot != "Afternoon"
-							available_requests.push(answering_user_shift)
-						end
-				end	
-				end
-
-			end
-			available_requests
-		end
-
 
 		# def self.check_shift_incompatibilites(shift_to_be_changed, shift_gap)
 		# 	case shift_to_be_changed.shift_slot_id

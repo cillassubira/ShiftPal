@@ -1,0 +1,13 @@
+<ul class="collection">
+ <% @requests_sent.each do |request_sent| %>
+    <li class="collection-item avatar">
+        <span class="title"><%= request_sent.shift_requested_id %></span>
+          <p>First Line <br>
+            Second Line
+          </p>
+          <div class="secondary-content">
+          Pending
+          </div>
+    </li>
+   <% end %>
+</ul>

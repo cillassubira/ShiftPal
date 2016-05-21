@@ -10,9 +10,9 @@ class ApplicationController < ActionController::Base
       devise_parameter_sanitizer.for(:sign_up) << :alias
     end
 
-  def after_sign_in_path_for(user)
-    user_shifts_path(user)
-  end
+    def after_sign_in_path_for(user)
+      user_shifts_path(user)
+    end
 
   protect_from_forgery with: :exception
 end

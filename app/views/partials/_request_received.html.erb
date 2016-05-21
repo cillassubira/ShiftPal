@@ -1,0 +1,16 @@
+<ul class="collection">
+ <% @requests_received.each do |request_received| %>
+    <li class="collection-item avatar">
+        <span class="title"><%= request_received.shift_requested_id %></span>
+
+          <p>First Line <br>
+            Second Line
+          </p>
+          <div class="secondary-content">
+          <%= link_to "Accept Request", requests_accept_path(:id => request_received.id),:class => "btn waves-effect waves-light accept-request-btn", :method => :patch, :action => :update %>
+          <%= link_to "Reject Request", root_path ,:class => "btn waves-effect waves-light reject-request-btn" %>
+          </div>
+    </li>
+   <% end %>
+</ul>
+

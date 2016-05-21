@@ -35,9 +35,9 @@ users = User.create([
 ])
 
 def rosterpair (user1, user2, first_day, last_day)
-	shift_num = 1
-	(first_day..last_day).each_with_index do |day, index|
-		unless (shift_num>5)
+	shift_num = 1	
+	unless (shift_num>5)
+		(first_day..last_day).each_with_index do |day, index|
 			Shift.create([
 				{slot: shift_num, day: day, user_id: user1},
 				{slot: shift_num, day: day, user_id: user2},
@@ -45,9 +45,9 @@ def rosterpair (user1, user2, first_day, last_day)
 			if (index%2!=0)
 				shift_num = shift_num +1
 			end
-		end
-		if (shift_num==6)
-			shift_num =1
+			if (shift_num==6)
+				shift_num =1
+			end
 		end
 	end
 end
@@ -57,7 +57,6 @@ rosterpair(3,4, Date.new(2016, 05, 24), Date.new(2016, 06, 30))
 rosterpair(5,6, Date.new(2016, 05, 26), Date.new(2016, 06, 30))
 rosterpair(7,8, Date.new(2016, 05, 28), Date.new(2016, 06, 30))
 rosterpair(9,10, Date.new(2016, 05, 30), Date.new(2016, 06, 30))
-
 
 shifts = Shift.where(slot: 5).update_all(slot:4)
 
