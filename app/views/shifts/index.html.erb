@@ -5,7 +5,7 @@
       	<%= month_calendar do |date| %>
   			<p class = "display-day"><%= date.mday %></p>
             <% if Shift.find_by(user_id: current_user.id, day: date).class == Shift %>
-                <p hidden ><%= Shift.find_by(user_id: current_user.id, day: date).id %></p>
+                <p hidden class = "js-shift-id" ><%= Shift.find_by(user_id: current_user.id, day: date).id %></p>
             <% end %>
   		<% end %>
 		</div>
