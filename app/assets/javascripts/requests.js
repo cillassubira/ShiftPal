@@ -8,7 +8,23 @@ $(document).on('ready',function(){
 		$(this).addClass('disabled');
 		$(this).text('Request sent!');
 	});
+
+//Accept request
+	$('.send-request-btn').on('click', function(event){
+		$(this).addClass('disabled');
+		$(this).text('Request sent!');
+	});
+
+//Reject request
+	$('.send-request-btn').on('click', function(event){
+		$(this).addClass('disabled');
+		$(this).text('Request sent!');
+	});
+//Mark as seen
+
+
 });
+
 
 
 
