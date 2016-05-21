@@ -4,15 +4,10 @@
   		<div class="col s8">
       	<%= month_calendar do |date| %>
   			<p class = "display-day"><%= date.mday %></p>
-  			<%if  @shifts.find_by(day: date).class == Shift %>
-  				<p>Hoy trabajas:</p>
-          <p hidden class="js-shift-slot">%= @shifts.find_by(day: date).slot %></p>
-  				<%=  @shifts.find_by(day: date).slot %>
-    			<p hidden class="js-shift-date"><%= date %></p>
-          <p hidden class="js-shift-id">
-          <%= @shifts.find_by(day: date).id %></p>
-  			<%end %>
-		<% end %>
+            <% if Shift.find_by(user_id: current_user.id, day: date).class == Shift %>
+                <p hidden ><%= Shift.find_by(user_id: current_user.id, day: date).id %></p>
+            <% end %>
+  		<% end %>
 		</div>
    		<div class="col s4">
     		<%= render "/partials/shift_card" %>

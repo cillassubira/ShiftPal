@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   authenticated :user do
-    root :to => "shifts#index" , :as => "authenticated_root"
+    root :to => 'shifts#index' , :as => 'authenticated_root'
   end
 
   root 'landing_page#index'
@@ -14,8 +14,11 @@ Rails.application.routes.draw do
     end
   end
 
-  get "/users/:user_id/requests", to: 'requests#inbox', as: :requests_inbox
-  post '/users/:user_id/requests/:id', to: 'requests#accept', as: :requests_accept
+  get '/shift_info/:id/', to: 'shifts#shift_info'
+  get '/users/:user_id/requests', to: 'requests#inbox', as: :requests_inbox
+  patch '/users/:user_id/requests/:id', to: 'requests#accept', as: :requests_accept
+  patch '/users/:user_id/requests/:id', to: 'requests#reject', as: :requests_reject
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

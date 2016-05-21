@@ -1,7 +1,7 @@
  <div class="card">
     <div class="card-content">
       <span class="card-title activator grey-text text-darken-4 js-display-day">Today is <br>
-      <%= Date.today.strftime("%A, %B %d")%>.</span>
+      <%= Date.today.strftime("%A, %B %d")%></span>
       <% if @shifts.find_by(day: Date.today).nil? == false %>
       	<% slot = @shifts.find_by(day: Date.today).slot %>
       	<p> <%= slot %> Shift <br>
@@ -9,7 +9,6 @@
       	<% else %>
       	<p>You are on a Free day, enjoy! </p>
       <% end %>
-      <p class= "js-display-day-info">Click for more info on a shiftday!
-      </p>
+      <p class= "js-display-day-info">Click for more info on a shiftday!</p>
     </div>
 </div>

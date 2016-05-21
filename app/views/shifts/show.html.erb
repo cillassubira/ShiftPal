@@ -18,7 +18,7 @@
          		<%= available_request.slot %>
       			</p>
             <div class=" secondary-content">
-            <%= link_to "Send Request", user_shift_requests_path(:shift_id => @shift_to_be_changed.id, :shift_answering_id => available_request.id),:class => "btn waves-effect waves-light send-request-btn send-request-btn", :method => :post, remote: true %>
+            <%= link_to "Send Request", user_shift_requests_path(:shift_id => @shift_to_be_changed.id, :shift_answering_id => available_request.id),:class => "btn waves-effect waves-light send-request-btn send-request-btn", :method => :post, remote: true, :data => {:confirm => 'Are you sure?'} %>
             </div>
         <% end %>
         </li>
