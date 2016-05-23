@@ -14,6 +14,7 @@ module ShiftsHelper
   end
 
   def display_shift_hours(shift_slot)
+    hours = ""
     case shift_slot
       when "Morning"
         hours = "06:45 to 14:00 LT"
