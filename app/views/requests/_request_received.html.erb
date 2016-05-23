@@ -1,0 +1,26 @@
+<ul class="collection">
+ <% @requests_received.each do |request_received| %>
+    <li class="collection-item avatar">
+    <div class= "col s3">
+      <% shift_r = display_shift(request_received.shift_requested_id) %>
+        <span class="title"><%= display_user(shift_r.user_id).alias %></span>
+        <p><%= render_date(shift_r.day) %></p>
+        <p><%= shift_r.slot %> Shift</p>
+    </div>
+    <div class="col s2">
+       <i class="material-icons medium">swap_horiz</i>
+    </div>
+    <div class = "col s3">
+        <% shift_a = display_shift(request_received.shift_answering_id) %>
+        <span class="title">For your:</span>
+        <p><%= render_date(shift_a.day) %></p>
+        <p><%= shift_a.slot %> Shift</p>
+    </div>
+          <div class="secondary-content">
+          <%= link_to "Accept Request", requests_accept_path(:id => request_received.id),:class => "btn waves-effect waves-light accept-request-btn", :method => :patch, :action => :update %><br>
+          <%= link_to "Reject Request", root_path ,:class => "btn waves-effect waves-light reject-request-btn" %>
+          </div>
+    </li>
+   <% end %>
+</ul>
+

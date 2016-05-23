@@ -1,0 +1,14 @@
+<ul class="collection">
+ <% @requests_accepted_by_others.each do |request_accepted| %>
+    <li class="collection-item avatar">
+        <span class="title"><%= request_accepted.shift_requested_id %></span>
+          <p>First Line <br>
+            Second Line
+          </p>
+      		<div class="secondary-content">
+          Accepted!<br>
+            <%= link_to "Seen!", root_path ,:class => "btn waves-effect waves-light seen-request-btn" %>
+      		</div>
+    </li>
+   <% end %>
+</ul>

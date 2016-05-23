@@ -1,0 +1,24 @@
+<ul class="collection">
+ <% @requests_sent.each do |request_sent| %>
+    <li class="collection-item avatar">
+    <div class= "col s4">
+        <span class="title">You requested:</span>
+        <% shift_r = display_shift(request_sent.shift_requested_id)%>
+        <p><%= render_date(shift_r.day) %></p>
+        <p><%= shift_r.slot %> Shift</p>
+    </div>
+    <div class="col s2">
+       <i class="material-icons medium">swap_horiz</i>
+    </div>
+    <div class = "col s4">
+        <% shift_a = display_shift(request_sent.shift_answering_id) %>
+        <span class="title">To: <%= display_user(shift_a.user_id).alias %></span>
+        <p><%= render_date(shift_a.day) %></p>
+        <p><%= shift_a.slot %> Shift</p>
+    </div>
+        <div class="secondary-content">
+          Pending
+        </div>
+    </li>
+   <% end %>
+</ul>
