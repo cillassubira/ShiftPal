@@ -1,9 +1,9 @@
 class RequestsController < ApplicationController
+	
 	def inbox
 		@requests_sent = Request.where(user_requesting_id: params[:user_id], status: 1)
 		@requests_accepted_by_others = Request.where(user_requesting_id: params[:user_id], status: 2)
 		@requests_received = Request.where(user_answering_id: params[:user_id], status: 1)
-
 	end
 
 	def create
@@ -15,14 +15,11 @@ class RequestsController < ApplicationController
 			status: 1
 		)
 		if request.save
-      flash[:success] = "Your request has been sent!"
-      #redirect_to @user
-    else
-      #render 'new'
-    end
-		# respond_to do |format|
-		# 	format.js{}
-		# end
+      		flash[:success] = "Your request has been sent!"
+      	#redirect_to @user
+    	else
+      	#render 'new'
+   		end
 	end
 
 	def accept
@@ -60,7 +57,6 @@ class RequestsController < ApplicationController
 		request = Request.find(params[:id])
 		request.update(status: 4)
 		redirect_to requests_inbox_path
-
 	end
 
 

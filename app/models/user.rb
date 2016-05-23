@@ -5,5 +5,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :validatable
 
   has_many :shifts
-	has_many :requests
+  has_many :requests
 end
