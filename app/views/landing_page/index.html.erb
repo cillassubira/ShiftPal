@@ -8,78 +8,61 @@
 <body>
 <div class="section no-pad-bot blue-grey lighten-5 home-image" id="index-banner">
     <div class="container">
-      <div class="row">
-        <div class="col s5 m5">
-          <br><br>
-          <h1 class="header left blue-grey-text text-darken-4">The Next<br>Generation of Corporate Calendars</h1>
-          <br><br>
+        <div class="row">
+            <div class="col s5 m5">
+            <br><br>
+                <h1 class="header left blue-grey-text text-darken-4">The Next<br>Generation of Corporate Calendars</h1>
+            <br><br>
+            </div>
+            <div class="col s7 m7">
+                <img class="responsive-img center" src="img/festrip-devices.png">
+            </div>
         </div>
-
-        <div class="col s7 m7">
-
-            <img class="responsive-img center" src="img/festrip-devices.png">
-
-        </div>
-      </div>
-      </div>
-  </div>
-
-
-  <div class="container">
-    <div class="section">
-
-      <!--   Icon Section   -->
-      <div class="row">
-        <div class="col s12 m12">
-          <h4 class="center">Speeds up development</h4>
-
-            <p class="light center">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
-        </div>
-      </div>
-      <div class="row center">
-        <a href="/getting-started.html" id="download-button" class="btn-large waves-effect waves-light blue-grey darken-1 ">Get Started</a>
-        
-
-  <%= link_to root_path do %>
-  <%= content_tag :span, "Home", :class => "btn-large waves-effect waves-light blue-grey darken-1 " %>
-<% end %>
-
-      </div>
-
-      <div class="row">
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center blue-grey-text text-darken-4"><i class="material-icons">perm_contact_calendar</i></h2>
-            <h5 class="center">Check your Roster</h5>
-
-            <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
-          </div>
-        </div>
-
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center blue-grey-text text-darken-4"><i class="material-icons">group</i></h2>
-            <h5 class="center">See who are your shiftpals</h5>
-
-            <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
-          </div>
-        </div>
-
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center blue-grey-text text-darken-4"><i class="material-icons">thumb_up</i></h2>
-            <h5 class="center">Change your shifts</h5>
-
-            <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
-          </div>
-        </div>
-      </div>
-
     </div>
-
 </div>
 
+    <div class="container">
+        <div class="section">
+            <div class="row">
+                <div class="col s12 m12">
+                    <h4 class="center">Speeds up development</h4>
+                    <p class="light center">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
+                </div>
+            </div>
+            <div class="row center">
+                <a href="/getting-started.html" id="download-button" class="btn-large waves-effect waves-light blue-grey darken-1 ">Get Started</a>
+                <%= link_to root_path do %>
+                <%= content_tag :span, "Home", :class => "btn-large waves-effect waves-light blue-grey darken-1 " %>
+                <% end %>
+            </div>
 
+        <div class="row">
+            <div class="col s12 m4">
+                <div class="icon-block">
+                <h2 class="center blue-grey-text text-darken-4"><i class="material-icons">perm_contact_calendar</i></h2>
+                <h5 class="center">Check your Roster</h5>
+                    <p class="light">Just a click to see your shifts on a current month calendar. Browse your roster to select future shifts and get all the information. </p>
+                </div>
+            </div>
 
-  </body>
+            <div class="col s12 m4">
+                <div class="icon-block">
+                <h2 class="center blue-grey-text text-darken-4"><i class="material-icons">group</i></h2>
+                <h5 class="center">Change your shifts</h5>
+                    <p class="light">By an algorithm that respects shift compatibilities, you will be able to send or accept requests from/to your shiftpals in exchange for your selected available shifts.</p>
+                </div>
+            </div>
+
+            <div class="col s12 m4">
+                <div class="icon-block">
+                <h2 class="center blue-grey-text text-darken-4"><i class="material-icons">thumb_up</i></h2>
+                <h5 class="center">Plan and enjoy your free time</h5>
+                    <p class="light">Not waiting for email confirmations, just one click to plan a weekend getaway, your next yoga class or just meeting up with friends in advance or in short notice.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
 </html>

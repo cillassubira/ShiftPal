@@ -19,10 +19,10 @@
         <p><%= render_date(shift_b.day) %></p>
         <p><%= shift_b.slot %> Shift</p>
     </div>
-            <div class="secondary-content">
-          <p>Has been <%= request_accepted.status %></p>
-            <%= link_to "Seen!", requests_seen_path(:id => request_accepted.id),:anchor => "requests_sent", :class => "btn waves-effect waves-light seen-request-btn", :method => 'patch', :action => :mark_as_seen %>
-            </div>
+    <div class="secondary-content">
+        <p>Has been <%= request_accepted.status %></p>
+        <%= link_to "Seen!", requests_seen_path(:id => request_accepted.id,:anchor => "requests_sent"), :class => "btn waves-effect waves-light seen-request-btn", :method => 'patch', :action => :mark_as_seen %>
+    </div>
     </li>
    <% end %>
 </ul>
