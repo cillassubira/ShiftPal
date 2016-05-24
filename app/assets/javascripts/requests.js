@@ -2,27 +2,11 @@
 // # All this logic will automatically be available in application.js.
 // # You can use CoffeeScript in this file: http://coffeescript.org/
 
-
 $(document).on('ready',function(){   
-	$('.send-request-btn').on('click', function(event){
+	$('.seen-request-btn').on('click', function(event){
 		$(this).addClass('disabled');
-		$(this).text('Request sent!');
+		$(this).delete();
 	});
-
-//Accept request
-	$('.send-request-btn').on('click', function(event){
-		$(this).addClass('disabled');
-		$(this).text('Request sent!');
-	});
-
-//Reject request
-	$('.send-request-btn').on('click', function(event){
-		$(this).addClass('disabled');
-		$(this).text('Request sent!');
-	});
-//Mark as seen
-
-
 });
 
 
