@@ -15,7 +15,13 @@
  *= require_self
  */
 .container{
-	margin-top:30px;
 	width: 90%
+}
 
+.row{
+	margin-top: 20px;
+}
+
+.alert{
+	font-size: 30px;
 }

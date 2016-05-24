@@ -2,18 +2,24 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .collection-item.first{
-
 	background-color: #e0e0e0
 }
 
 .send-request-btn{
 	float: right; 
 	margin-right: 20px;
+
 }
 
-.calendar-btn{
-	float: left;
-	color: #e91e63;
-	bottom: 10px;
-	left: 24px;
+.accept-request-btn{
+	margin-right: 10px;
+	margin-top: 10px;
+
+}
+
+.reject-request-btn{
+	// margin-right: 20px;
+	// height: 15px;
+	margin-top: 10px;
+
 }
