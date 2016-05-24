@@ -1,5 +1,7 @@
 class ShiftsController < ApplicationController
 	before_action :authenticate_user! 
+	before_action :shift_from_user, only: [:show]
+
 	def index
 	  @requests_received = Request.where(user_answering_id: params[:user_id], status: 1)
 	  @shifts = current_user.shifts
@@ -18,5 +20,14 @@ class ShiftsController < ApplicationController
 			format.js{}
 		end
 	end
+
+	private
+	def shift_from_user
+      @shift = Shift.find(params[:id])
+      unless @shift.user_id == current_user.id
+      	flash[:notice] = "Access forbidden."
+        redirect_to root_path
+      end
+    end
 
 end

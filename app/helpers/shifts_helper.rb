@@ -9,12 +9,13 @@ module ShiftsHelper
     	td_class << 'afternoon-shift'       if day_shift.slot == "Afternoon"
     	td_class << 'night-shift'           if day_shift.slot == "Night"
     	td_class << 'free-shift'            if day_shift.slot == "Free"
+      td_class << 'not-for-change'        if day < Date.today
     end
     td_class
   end
 
   def display_shift_hours(shift_slot)
-    hours = ""
+    hours = ''
     case shift_slot
       when "Morning"
         hours = "06:45 to 14:00 LT"
@@ -24,6 +25,10 @@ module ShiftsHelper
         hours = "20:45 to 07:00 LT"
     end
     return "Remember working hours from " + hours
+  end
+
+  def display_collegues(day, user)
+    Shift.where(day: day, slot: slot)
   end
 
 end

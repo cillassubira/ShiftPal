@@ -16,7 +16,7 @@ class RequestsController < ApplicationController
 			status: 1
 		)
 		respond_to do |format|
-			format.js { flash[:notice] = "Your request has been sent!"}
+			format.js {}
 		end
 	end
 
@@ -25,7 +25,6 @@ class RequestsController < ApplicationController
 		collegue_shift = Shift.find(@request.shift_requested_id)
 		collegue_id = collegue_shift.user_id
 
-		#current_user_gap = Shift.find_by(user_id: current_user.id, day: collegue_shift.day)
 		current_user_gap = current_user.shifts.find_by(day: collegue_shift.day)
 		collegue_gap = Shift.find_by(user_id: collegue_id, day: current_user_shift.day)
 
@@ -51,9 +50,7 @@ class RequestsController < ApplicationController
 	end
 
 	def mark_as_seen
-		binding.pry
 		@request.update(status: 4)
-
 		redirect_to requests_inbox_path
 	end
 
@@ -61,7 +58,6 @@ class RequestsController < ApplicationController
 
 	def set_request
 		@request = Request.find(params[:id])
-		
 	end
 
 
