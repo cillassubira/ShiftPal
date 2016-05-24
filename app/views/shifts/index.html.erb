@@ -4,16 +4,37 @@
   		<div class="col s8">
       	<%= month_calendar do |date| %>
   			<p class = "display-day"><%= date.mday %></p>
-            <% if Shift.find_by(user_id: current_user.id, day: date).class == Shift %>
-                <p hidden class = "js-shift-id" ><%= Shift.find_by(user_id: current_user.id, day: date).id %></p>
-            <% end %>
+            <p hidden class = "display-day-complete" ><%= date %></p>
   		<% end %>
 		</div>
    		<div class="col s4">
-    		<%= render "/partials/shift_card" %>
-    		<%= render "/partials/key_card" %>
+            <%= render "shift_card" %>
+            <div id ='js-shift-card'></div>
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">Key</span>
+                    <ul class="collection">
+                        <li class="collection-item">
+                        <i class="material-icons morning">av_timer</i>Morning Shift</li>
+                        <li class="collection-item"><i class="material-icons afternoon">av_timer</i>Afternoon Shift</li>
+                        <li class="collection-item"><i class="material-icons night">av_timer</i>Night Shift</li>
+                    </ul>
+                </div>
+            </div>
     	</div>
 	</div>
 </div>
+
+  <!-- Modal Structure -->
+  <div id="modal-alert" class="modal">
+    <div class="modal-content">
+      <h4>Wow! Stop!</h4>
+      <p class="modal-alert-message"></p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+    </div>
+  </div>
+
 </body>
 

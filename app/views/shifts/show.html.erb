@@ -1,13 +1,12 @@
 <div class="container">
 <div class="row">
-    <div class="col s12">
+    <div class="col s6 offset-s3">
 		<ul class="collection">
 		    <li class="collection-item avatar first">
       			<h4>Available requests for:</h4>
       			<p class= "secondary-content">
-      			<%= @shift_to_be_changed.day.strftime("%A") %><br>
-      			<%= @shift_to_be_changed.day %><br>
-         		<%= @shift_to_be_changed.slot %>
+      			<%= render_date(@shift_to_be_changed.day) %><br>
+         		<%= @shift_to_be_changed.slot %> Shift
             </p>
     		</li>
         <% @available_requests.each do |available_request| %>
@@ -18,12 +17,18 @@
          		<%= available_request.slot %>
       			</p>
             <div class=" secondary-content">
-            <%= link_to "Send Request", user_shift_requests_path(:shift_id => @shift_to_be_changed.id, :shift_answering_id => available_request.id),:class => "btn waves-effect waves-light send-request-btn send-request-btn", :method => :post, remote: true, :data => {:confirm => 'Are you sure?'} %>
+              <%= link_to "Send Request", user_shift_requests_path(:shift_id => @shift_to_be_changed.id, :shift_answering_id => available_request.id),:class => "btn waves-effect waves-light send-request-btn send-request-btn", :method => 'post', remote: true %> 
+              <% end %>
+              <div id="notice"></div>
             </div>
-        <% end %>
         </li>
 		</ul>
-    <%= link_to "Go to inbox Requests", requests_inbox_path(:anchor => "requests_received"), :class => "btn waves-effect waves-light send-request-btn send-request-btn" %>
     </div>
+</div>
+</div>
+<div class ="row">
+<div class="col s12">
+    <%= link_to "Back to Calendar", user_shifts_path, :class => "btn waves-effect waves-light left" %>
+    <%= link_to "Go to Inbox Requests", requests_inbox_path(:anchor => "requests_sent"), :class => "btn waves-effect waves-light right" %>
 </div>
 </div>

@@ -1,4 +1,33 @@
 <ul class="collection">
+  <%if @requests_accepted_by_others.empty? %>
+  <span>No requests accepted or cancelled!</span>
+  <% end %>
+ <% @requests_accepted_by_others.each do |request_accepted| %>
+    <li class="collection-item avatar">
+    <div class= "col s4">
+        <span class="title">Your request for: </span>
+        <% shift_a = display_shift(request_accepted.shift_requested_id)%>
+        <p><%= render_date(shift_a.day) %></p>
+        <p><%= shift_a.slot %> Shift</p>
+    </div>
+    <div class="col s2">
+       <i class="material-icons medium">swap_horiz</i>
+    </div>
+    <div class = "col s4">
+        <% shift_b = display_shift(request_accepted.shift_answering_id) %>
+        <span class="title">For : <%= display_user(shift_b.user_id).alias %></span>
+        <p><%= render_date(shift_b.day) %></p>
+        <p><%= shift_b.slot %> Shift</p>
+    </div>
+            <div class="secondary-content">
+          <p>Has been <%= request_accepted.status %></p>
+            <%= link_to "Seen!", requests_seen_path(:id => request_accepted.id),:anchor => "requests_sent", :class => "btn waves-effect waves-light seen-request-btn", :method => 'patch', :action => :mark_as_seen %>
+            </div>
+    </li>
+   <% end %>
+</ul>
+
+<ul class="collection">
  <% @requests_sent.each do |request_sent| %>
     <li class="collection-item avatar">
     <div class= "col s4">

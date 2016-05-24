@@ -1,0 +1,8 @@
+console.log("Peticion hecha");
+
+$("#notice").html("<%= flash[:notice] %>");
+$("#notice").fadeOut(2500, function() {
+    $(this).remove();
+});
+
+//Include modal

@@ -1,0 +1,27 @@
+var shiftId = String("<%= @shift.id %>");
+var shiftDay = String("<%= @shift.day %>")
+//refactorize to function 
+var today = new Date().setHours(0,0,0,0);
+var shiftDateSplit = shiftDay.split("-");
+var shiftDate = new Date(shiftDateSplit[0], shiftDateSplit[1] - 1, shiftDateSplit[2]);
+var shiftDateNum = shiftDate.setHours(0,0,0,0);
+
+$(document).ready(function() {
+	
+	if (shiftDateNum == today){
+ 		$('.modal-alert-message').html("Sorry you cant change TODAY shift, try with tomorrow's!!")
+ 		$('#modal-alert').openModal();
+ 	}
+ 	else if(shiftDateNum < today){
+ 		$('.modal-alert-message').html("Sorry Mr McFly, Doc has not implemented yet the TIMETRAVELLING MODULE!!")
+ 		$('#modal-alert').openModal();
+ 	}
+ 	else{
+ 		$('.js-today-card-content').html("<%= escape_javascript(render partial: 'content_card') %>");
+ 	}
+ 	
+});
+
+
+
+

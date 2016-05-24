@@ -1,5 +1,8 @@
 <ul class="collection">
- <% @requests_received.each do |request_received| %>
+    <%if @requests_received.empty? %>
+        <span>There are no requests for you!</span>
+    <% end %>
+    <% @requests_received.each do |request_received| %>
     <li class="collection-item avatar">
     <div class= "col s3">
       <% shift_r = display_shift(request_received.shift_requested_id) %>
@@ -16,11 +19,15 @@
         <p><%= render_date(shift_a.day) %></p>
         <p><%= shift_a.slot %> Shift</p>
     </div>
-          <div class="secondary-content">
-          <%= link_to "Accept Request", requests_accept_path(:id => request_received.id),:class => "btn waves-effect waves-light accept-request-btn", :method => :patch, :action => :update %><br>
-          <%= link_to "Reject Request", root_path ,:class => "btn waves-effect waves-light reject-request-btn" %>
-          </div>
+    <div class="col s3 offset-s1">
+        <%= link_to requests_accept_path(:id => request_received.id), :method => 'patch', :action => :accept, :class => "btn-floating waves-effect waves-light accept-request-btn" do %>
+            <a><i class="material-icons light-blue lighten-3">thumb_up</i></a>
+        <% end %>
+        <%= link_to requests_reject_path(:id => request_received.id),:class => "btn-floating waves-effect waves-light reject-request-btn",:method => 'patch', :action => :reject do %>
+            <a><i class="material-icons red accent-1">thumb_down</i></a>
+        <% end %>
+    </div>
     </li>
-   <% end %>
+    <% end %>
 </ul>
 
