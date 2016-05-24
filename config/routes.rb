@@ -14,11 +14,11 @@ Rails.application.routes.draw do
     end
   end
 
-  get '/shift_info/:id/', to: 'shifts#shift_info'
+  get '/shift_info/:shift_date/', to: 'shifts#shift_info', as: :shift_info
   get '/users/:user_id/requests', to: 'requests#inbox', as: :requests_inbox
-  patch '/users/:user_id/requests/:id', to: 'requests#accept', as: :requests_accept
-  patch '/users/:user_id/requests/:id', to: 'requests#reject', as: :requests_reject
-
+  patch '/users/:user_id/requests/:id/accept', to: 'requests#accept', as: :requests_accept
+  patch '/users/:user_id/requests/:id/reject', to: 'requests#reject', as: :requests_reject
+  patch '/users/:user_id/requests/:id/seen', to: 'requests#mark_as_seen', as: :requests_seen
 
 
   # The priority is based upon order of creation: first created -> highest priority.

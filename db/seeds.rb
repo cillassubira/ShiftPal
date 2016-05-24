@@ -6,21 +6,6 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-# shift_slots = ShiftSlot.create([
-# 	{slot: 'M'},
-# 	{slot: 'A'},
-# 	{slot: 'N'},
-# 	{slot: 'F'},
-# 	{slot: 'F'}
-# 	])
-
-# request_statuses = RequestStatus.create([
-# 	{status: 'Requested'},
-# 	{status: 'Accepted'},
-# 	{status: 'Cancelled'}
-# 	])
-
-
 users = User.create([
   {name: 'Elena', alias: 'EOM', email: 'eom@example.com', password: '12345678', password_confirmation: '12345678'},
   {name: 'David', alias: 'DVC', email: 'dvc@example.com', password: '12345678', password_confirmation: '12345678'},
@@ -52,11 +37,11 @@ def rosterpair (user1, user2, first_day, last_day)
 	end
 end
 
-rosterpair(1,2, Date.new(2016, 06, 01), Date.new(2016, 06, 30))
-rosterpair(3,4, Date.new(2016, 05, 24), Date.new(2016, 06, 30))
-rosterpair(5,6, Date.new(2016, 05, 26), Date.new(2016, 06, 30))
-rosterpair(7,8, Date.new(2016, 05, 28), Date.new(2016, 06, 30))
-rosterpair(9,10, Date.new(2016, 05, 30), Date.new(2016, 06, 30))
+rosterpair(1,2, Date.new(2016, 04, 21), Date.new(2016, 07, 10))
+rosterpair(3,4, Date.new(2016, 04, 23), Date.new(2016, 07, 10))
+rosterpair(5,6, Date.new(2016, 04, 25), Date.new(2016, 07, 10))
+rosterpair(7,8, Date.new(2016, 04, 27), Date.new(2016, 07, 10))
+rosterpair(9,10, Date.new(2016, 04, 19), Date.new(2016, 07, 10))
 
 shifts = Shift.where(slot: 5).update_all(slot:4)
 
