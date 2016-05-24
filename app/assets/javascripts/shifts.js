@@ -9,10 +9,11 @@ $(document).on('ready',function(){
 		$(this).addClass('disabled');
 		$(this).text('Request Sent!');
 	});
-	// $('.send-request-btn').on('click', function(event){
-	// 	event.preventDefault();
-	// 	$(this).text('Request Sent!');
-	// 	$(this).addClass('disabled');
-	// });
+
+	$(function() {
+  		setTimeout(function(){
+    		$('.alert').slideUp(500);
+    	}, 3000);
+	});
 });
 
