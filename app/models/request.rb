@@ -4,5 +4,8 @@ class Request < ActiveRecord::Base
 	belongs_to :shift_requesting, :class_name => 'Shift'
 	belongs_to :shift_answering, :class_name => 'Shift'
 	enum status: { Pending: 1, Accepted: 2, Cancelled: 3, Seen: 4 }
+    #   def cross_update_shifts(current_user_shift, collegue_shift){
+    #   collegue_id = collegue_shift.user_id
+    # }
 
 end

@@ -1,9 +1,9 @@
 class ShiftsController < ApplicationController
 	before_action :authenticate_user! 
 	before_action :shift_from_user, only: [:show]
+  before_action :pending_requests, except: [:shift_info]
 
 	def index
-	  @requests_received = Request.where(user_answering_id: params[:user_id], status: 1)
 	  @shifts = current_user.shifts
 	end
 
@@ -30,4 +30,7 @@ class ShiftsController < ApplicationController
       end
     end
 
+  def pending_requests
+     @requests_received = Request.where(user_answering_id: params[:user_id], status: 1)
+  end
 end

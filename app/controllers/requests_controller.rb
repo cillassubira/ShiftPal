@@ -25,6 +25,8 @@ class RequestsController < ApplicationController
 		collegue_shift = Shift.find(@request.shift_requested_id)
 		collegue_id = collegue_shift.user_id
 
+
+
 		current_user_gap = current_user.shifts.find_by(day: collegue_shift.day)
 		collegue_gap = Shift.find_by(user_id: collegue_id, day: current_user_shift.day)
 
