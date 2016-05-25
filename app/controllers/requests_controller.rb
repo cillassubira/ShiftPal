@@ -25,8 +25,6 @@ class RequestsController < ApplicationController
 		collegue_shift = Shift.find(@request.shift_requested_id)
 		collegue_id = collegue_shift.user_id
 
-
-
 		current_user_gap = current_user.shifts.find_by(day: collegue_shift.day)
 		collegue_gap = Shift.find_by(user_id: collegue_id, day: current_user_shift.day)
 
@@ -38,10 +36,8 @@ class RequestsController < ApplicationController
 
 		@request.update(status: 2)
 
-		other_requests = Request.where(shift_requested_id: @request.shift_requested_id, user_requesting_id: collegue_id, status: 1)
-		if !other_requests.empty?
-			other_requests.update_all(status: 3)
-		end
+		Request.cancel_other_requests(@request.shift_requested_id, collegue_id)
+
 		flash[:notice] = "Accepted!"
 		redirect_to requests_inbox_path
 	end

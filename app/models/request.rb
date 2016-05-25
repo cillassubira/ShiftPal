@@ -4,8 +4,12 @@ class Request < ActiveRecord::Base
 	belongs_to :shift_requesting, :class_name => 'Shift'
 	belongs_to :shift_answering, :class_name => 'Shift'
 	enum status: { Pending: 1, Accepted: 2, Cancelled: 3, Seen: 4 }
-    #   def cross_update_shifts(current_user_shift, collegue_shift){
-    #   collegue_id = collegue_shift.user_id
-    # }
+
+  def self.cancel_other_requests(shift_requested_id, user_requesting_id)
+    other_requests = Request.where(shift_requested_id: shift_requested_id, user_requesting_id: user_requesting_id, status: 1)
+    if !other_requests.empty?
+      other_requests.update_all(status: 3)
+    end
+  end
 
 end
