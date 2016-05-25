@@ -14,6 +14,10 @@
  *= require_tree .
  *= require_self
  */
+.flash-notice{
+	text-align: center;
+}
+
 .container{
 	width: 90%
 }
@@ -24,4 +28,70 @@
 
 .alert{
 	font-size: 30px;
+}
+
+#logo-container {
+	padding-left: 20px;
+	padding-right: 20px;
+	background-color: #ddd
+}
+
+#logo-container:hover {
+	background-color: #fff;
+	color: #ddd; 
+}
+
+nav {
+	height: 48px;
+	line-height: 48px;
+	font-family: ShentoxW01-Light;
+	background-color: #fff;
+	color: #ddd;
+}
+
+.nav-wrapper {
+	height: 48px;
+	line-height: 48px;
+}
+
+nav .nav-wrapper i {
+	height: 48px;
+	line-height: 48px;
+}
+
+nav ul a {
+	color: #ddd;
+}
+
+.card .card-content .card-title {
+    font-family: Avalon;
+    font-size: 24px;
+    text-align: center;
+}
+.card-content .card-key{
+	text-align: center;
+
+}
+
+.card .card-content .card-text {
+    font-family: ShentoxW01-Light;
+    font-size: 16px;
+}
+
+.js-display-day-info{
+	font-family: Avalon;
+	font-size: 14px;
+}
+
+.collection-item .card-key{
+	text-align: center;
+	font-family: Avalon;
+}
+.item-info{
+	font-family: ShentoxW01-Light;
+
+}
+
+.page-footer{
+	font-family: ShentoxW01-Light;
 }

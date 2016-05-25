@@ -9,22 +9,26 @@
 <html lang="en">
 <head>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="//db.onlinewebfonts.com/c/4712603f54ff886c6ba46185644675ba?family=ShentoxW01-Light" rel="stylesheet" type="text/css"/>
+<link href="//db.onlinewebfonts.com/c/846bf30549b6d556a988ea1599fa5bf8?family=Avalon" rel="stylesheet" type="text/css"/>
+
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
   <title>ShiftPal</title>
 </head>
-
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body>
 
 <%= render "/layouts/header" %>
+<div class = "container flash-notice">
 <% flash.each do |key, value| %>
     <div class="alert alert-<%= key %>">
         <%= value %>
     </div>
 <% end %>
+</div>
 <%= yield %>
 
 <%= render "/layouts/footer" %>

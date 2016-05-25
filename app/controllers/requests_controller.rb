@@ -40,12 +40,13 @@ class RequestsController < ApplicationController
 		if !other_requests.empty?
 			other_requests.update_all(status: 3)
 		end
-		flash[:notice] = 'Successfully checked in'
+		flash[:notice] = "Accepted!"
 		redirect_to requests_inbox_path
 	end
 
 	def reject
 		@request.update(status: 3)
+		flash[:notice] = "Rejected!"
 		redirect_to requests_inbox_path
 	end
 

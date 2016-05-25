@@ -2,6 +2,8 @@
     <%if @requests_received.empty? %>
         <span>There are no requests for you!</span>
     <% end %>
+    <div class= alert-accepted></div>
+    <div class= alert-rejected></div>
     <% @requests_received.each do |request_received| %>
     <li class="collection-item avatar">
     <div class= "col s3">
@@ -31,13 +33,14 @@
     <% end %>
 </ul>
 
-<div id="modal-request-answer" class="modal">
+<div id="modal-request-reject" class="modal">
     <div class="modal-content">
       <h4>Great!</h4>
-      <p class="modal-request-answer"></p>
+      <p class="modal-request-sent-message"></p>
     </div>
     <div class="modal-footer">
       <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
     </div>
 </div>
+
 

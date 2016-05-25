@@ -1,13 +1,10 @@
-<nav class="blue-grey darken-1 " role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="/" class="brand-logo left">ShiftPal</a>
+<nav role="navigation">
+    <div class="nav-wrapper"><a id="logo-container" href="/" class="brand-logo left">ShiftPal</a>
         <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
             <% if user_signed_in? %>
                 <li><span>Hello <%= current_user.name %>!</span></li>
-                <li><%= link_to user_shifts_path(current_user) do %>
-                    <i class="material-icons">today</i>
-                <% end %>
-                </li>
+                
                 <li><%= link_to requests_inbox_path(current_user) do %>
                     <% if !@requests_received.nil? && @requests_received.length != 0 %>
                         <span class="new badge">
@@ -17,6 +14,10 @@
                     <li><i class="material-icons">email</i>
                     <% end %>
                     </li>
+                    <li><%= link_to user_shifts_path(current_user) do %>
+                    <i class="material-icons">today</i>
+                <% end %>
+                </li>
                     <li><%= link_to 'Sign out', destroy_user_session_path, method:'DELETE' %></li>
             <% else %>
                 <li><%= link_to 'Sign up', new_user_registration_path %> |

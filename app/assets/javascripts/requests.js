@@ -7,16 +7,7 @@ $(document).on('ready',function(){
 		$(this).addClass('disabled');
 		$(this).delete();
 	});
-    $('.accept-request-btn').on('click', function(event){
-       $('.modal-request-answer').html("You accepted <%= User.find(@request.user_requesting_id).alias %> request to change:");
-       $('#modal-request-answer').openModal();
 
-    });
-    $('.reject-request-btn').on('click', function(event){
-        $('.modal-request-answer').html("You rejected <%= User.find(@request.user_requesting_id).alias %> request to change:");
-        $('#modal-request-answer').openModal();
-
-    });
 });
 
     
