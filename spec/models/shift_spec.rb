@@ -31,9 +31,9 @@ RSpec.describe "Shift" do
 	end
 
 	describe "check_incompatibilites" do
-		it "given a shift to change and a given a collection of free shifts returns a collection the compatible ones" do
-			free_shifts = Shift.where(day: @shift_to_be_changed.day, slot: 4 )
-			expect(Shift.check_incompatibilities(free_shifts, @shift_to_be_changed).length).to eq(1)
+		it "given a shift to change checks imcompatibilities and returns shift if available" do
+			free_shift = Shift.where(day: @shift_to_be_changed.day, slot: 4 )[0]
+			expect(Shift.check_incompatibilities(free_shift, @shift_to_be_changed)).to eq(free_shift)
 		end
 	end
 
