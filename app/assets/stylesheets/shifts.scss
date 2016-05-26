@@ -33,10 +33,12 @@
     border-collapse: collapse;
     box-sizing: border-box;
     text-align: center;
+    font-family: Avalon;
+    background-color: #f8f8f8;
   }
 
   td {
-    padding: 6px;
+    padding: 4px 10px 4px 10px;
     vertical-align: top;
     width: 5%;
     border: 1px solid white;
@@ -65,7 +67,7 @@
   }
 
   .day:hover{
-  	background-color: green;
+  	background-color: #2D99C4;
   }
 
   .wday-0 {}
@@ -78,16 +80,16 @@
 
   .today {
     border: 3px solid #ddd;
-    border-top-color: red;
+    border-top-color: #011627;
     border-top-style: solid;
     border-top-width: 3px;
-    border-right-color: red;
+    border-right-color: #011627;
     border-right-style: solid;
     border-right-width: 3px;
-    border-bottom-color: red;
+    border-bottom-color: #011627;
     border-bottom-style: solid;
     border-bottom-width: 3px;
-    border-left-color: red;
+    border-left-color: #011627;
     border-left-style: solid;
     border-left-width: 3px;
   }
@@ -102,34 +104,43 @@
   .has-events {}
 
   .morning-shift{
-    background: #ffa726
+    background: #2EC4B6
   }
 
   .afternoon-shift{
-    background: #69f0ae
+    background: #FF9F1C;
   }
 
   .night-shift{
-    background: #00b0ff
+    background: #E71D36;
   }
 }
 
 i.morning{
-  color: #ffa726;
+  color: #2EC4B6;
 }
 i.afternoon{
-  color: #69f0ae;
+  color: #FF9F1C;
 }
 
 i.night{
-  color: #00b0ff;
+  color: #E71D36;
 }
 
-.display-day{
-	font-size: 1.55em;
-	text-align: right;
-	padding-right: 10px;
-	margin-top: 10px;
+.display-day {
+    font-size: 28px;
+    text-align: right;
+    padding-right: 0px;
+    margin-top: 0px;
+    font-family: ShentoxW01-Light;
+}
+
+a {
+  color: #2D99C4;
+}
+
+a .display-day {
+  color: #011627;
 }
 
 .fixed-action-btn{
@@ -138,4 +149,21 @@ i.night{
 
 .not-for-change{
   opacity: 0.5;
+}
+
+.card-date {
+   font-family: ShentoxW01-Light;
+    font-size: 21px;
+    text-align: left;
+    margin-top: 0px;
+    padding-top: 0px;
+}
+
+.collection .collection-item.avatar i.circle{
+  background-color: #aaa;
+  color: #fff;
+}
+
+.modal-alert-message {
+  font-family: ShentoxW01-Light;
 }

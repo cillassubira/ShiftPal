@@ -4,22 +4,24 @@
 		<ul class="collection">
 		    <li class="collection-item avatar first">
             <% if @available_requests.empty? %>
-            <h5>There are no available requests for:</h4>
+            <h5 class="send-title">There are no available requests for:</h4>
             <% else %>
-      			<h4>Available requests for:</h4>
-      			<p class= "secondary-content">
-      			<%= render_date(@shift_to_be_changed.day) %><br>
-         		<%= @shift_to_be_changed.slot %> Shift
-            </p>
+      			<h4 class="send-title">Available requests for:</h4>
+            <div class= "secondary-content" >
+      			<p class= "sc-date">
+      			<%= render_date(@shift_to_be_changed.day) %></p>
+         		<p class="sc-shift"><%= @shift_to_be_changed.slot %> Shift</p>
+            </div>
     		</li>
             <% @available_requests.each do |available_request| %>
-    		<li class="collection-item avatar">
-      			<i class="material-icons circle">folder</i>
+    		<li class="collection-item avatar send">
+      			<i class="material-icons circle">perm_contact_calendar</i>
       			<span class="title"><%= User.find(available_request.user_id).alias %></span>
-      			<p><%= available_request.day.strftime("%A") %>: <%= available_request.day %><br>
+      			<p class="send-date"><%= render_date (available_request.day) %><br>
+            <p class="send-shift">
          		<%= available_request.slot %> Shift
       			</p>
-            <div class=" secondary-content">
+            <div class="secondary-content">
               <%= link_to "Send Request", user_shift_requests_path(:shift_id => @shift_to_be_changed.id, :shift_answering_id => available_request.id),:class => "btn waves-effect waves-light send-request-btn send-request-btn", :method => 'post', remote: true %> 
               <% end %>
               <div id="notice"></div>
@@ -32,17 +34,17 @@
 </div>
 <div class ="row">
 <div class="col s12">
-    <%= link_to "Back to Calendar", user_shifts_path, :class => "btn waves-effect waves-light left" %>
-    <%= link_to "Go to Inbox Requests", requests_inbox_path(:anchor => "requests_sent"), :class => "btn waves-effect waves-light right" %>
+    <%= link_to "Back to Calendar", user_shifts_path, :class => "btn waves-effect waves-light left back-calendar-btn" %>
+    <%= link_to "Go to Inbox Requests", requests_inbox_path(:anchor => "requests_sent"), :class => "btn waves-effect waves-light right go-inbox-btn" %>
 </div>
 </div>
 
 <div id="modal-request-sent" class="modal">
     <div class="modal-content">
-      <h4>Great!</h4>
+      <h3>Great!</h3>
       <p class="modal-request-sent-message"></p>
     </div>
     <div class="modal-footer">
-      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+      <a href="#!" class=" modal-action modal-close waves-effect btn-flat">Close</a>
     </div>
 </div>

@@ -1,25 +1,25 @@
+<%if @requests_received.empty? %>
+        <span class="requests-no-inbox">There are no requests for you!</span>
+<% else %>
 <ul class="collection">
-    <%if @requests_received.empty? %>
-        <span>There are no requests for you!</span>
-    <% end %>
     <div class= alert-accepted></div>
     <div class= alert-rejected></div>
     <% @requests_received.each do |request_received| %>
     <li class="collection-item avatar">
     <div class= "col s3">
       <% shift_r = display_shift(request_received.shift_requested_id) %>
-        <span class="title"><%= display_user(shift_r.user_id).alias %></span>
-        <p><%= render_date(shift_r.day) %></p>
-        <p><%= shift_r.slot %> Shift</p>
+        <span class="title title-shift-you"><%= display_user(shift_r.user_id).alias %></span>
+        <p class= "shift-date"><%= render_date(shift_r.day) %></p>
+        <p class= "shift-slot"><%= shift_r.slot %> Shift</p>
     </div>
     <div class="col s2">
-       <i class="material-icons medium">swap_horiz</i>
+       <i class="material-icons medium swap-horiz-icon">swap_horiz</i>
     </div>
     <div class = "col s3">
         <% shift_a = display_shift(request_received.shift_answering_id) %>
-        <span class="title">For your:</span>
-        <p><%= render_date(shift_a.day) %></p>
-        <p><%= shift_a.slot %> Shift</p>
+        <span class="title title-shift-you">For your:</span>
+        <p class= "shift-date"><%= render_date(shift_a.day) %></p>
+        <p class= "shift-slot"><%= shift_a.slot %> Shift</p>
     </div>
     <div class="col s3 offset-s1">
         <%= link_to requests_accept_path(:id => request_received.id), :method => 'patch', :action => :accept, :class => "btn-floating waves-effect waves-light accept-request-btn" do %>
@@ -32,14 +32,15 @@
     </li>
     <% end %>
 </ul>
+<% end %>
 
 <div id="modal-request-reject" class="modal">
     <div class="modal-content">
-      <h4>Great!</h4>
+      <h3>Great!</h3>
       <p class="modal-request-sent-message"></p>
     </div>
     <div class="modal-footer">
-      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+      <a href="#!" class=" modal-action modal-close waves-effect btn-flat">Close</a>
     </div>
 </div>
 

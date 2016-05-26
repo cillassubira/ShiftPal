@@ -1,8 +1,15 @@
 // Place all the styles related to the requests controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.request-container {
+	min-height: 545px;
+}
 .collection-item.first{
 	background-color: #e0e0e0
+}
+
+.collection .collection-item.avatar .circle {
+	left: 25px;
 }
 
 .send-request-btn{
@@ -22,4 +29,96 @@
 	// height: 15px;
 	margin-top: 10px;
 
+}
+
+.send span.title {
+	font-family: Avalon;
+	margin-left: 15px;
+}
+
+.send-date{
+	font-family: ShentoxW01-Light;
+	margin-left: 15px;
+}
+
+.send-shift{
+	font-family: Avalon;
+	margin-left: 15px;
+}
+
+.send-title {
+	font-family: Avalon;
+	font-size: 30px;
+}
+
+.secondary-content {
+	color: #2D99C4;
+}
+
+.sc-date {
+	font-family: ShentoxW01-Light;
+	text-align: right;
+	padding-right: 20px;
+}
+p.send-date {
+	padding-left: 15px;
+}
+
+.sc-shift {
+	font-family: Avalon;
+	text-align: right;
+	padding-right: 20px;
+}
+
+p.send-shift {
+	padding-left: 15px;
+}
+
+.back-calendar-btn {
+	margin-left: 350px;
+}
+
+.go-inbox-btn {
+	margin-right: 350px;
+}
+
+.requests-no-inbox{
+	font-family: ShentoxW01-Light;
+}
+
+.title-shift-you{
+	font-family: Avalon;
+}
+
+.shift-date {
+	font-family: ShentoxW01-Light;
+}
+
+.shift-slot {
+	font-family: Avalon;
+}
+
+.swap-horiz-icon {
+	color: #2D99C4;
+}
+
+.light-blue.lighten-3 {
+	background-color: #2D99C4 !important;
+}
+
+.red.accent-1{
+	background-color: #E71D36 !important;
+}
+
+.secondary-content {
+	text-align: right;
+}
+
+.secondary-content .link-to-seen{
+	text-decoration: underline;
+	color: #aaa;
+}
+
+.modal-request-sent-message {
+	font-family: ShentoxW01-Light;
 }

@@ -1,17 +1,17 @@
 <div class="card js-shift-card">
     <div class="card-content js-today-card-content">
-        <span class="card-title activator grey-text text-darken-4 js-display-day">
-        Today is <br>
-        <%= render_date(Date.today) %></span>
+        <div class="card-title activator grey-text text-darken-4 js-display-day">
+        Today is: </div>
+        <div class= "card-date"><%= render_date(Date.today) %></div>
         <div class="card-text">
         <% if @shifts.find_by(day: Date.today).nil? == false %>
             <% slot = @shifts.find_by(day: Date.today).slot %>
-            <p> <%= slot %> Shift <br>
+            <p>You work on <%= slot %> Shift <br>
             <%= display_shift_hours(slot)%></p>
         <% else %>
             <p>You are on a Free day, enjoy! </p>
         <% end %>
         </div>
-        <p class="js-display-day-info">Click for more info on a shiftday!</p>
+        <p class="js-display-day-info">Click on a shiftday for more info!</p>
     </div>
 </div>
