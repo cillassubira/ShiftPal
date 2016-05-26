@@ -18,11 +18,11 @@ module ShiftsHelper
     hours = ''
     case shift_slot
       when "Morning"
-        hours = "06:45 to 14:00 LT"
+        hours = "06:45 to 14:00"
       when "Afternoon"
-        hours = "13:45 to 21:00 LT"
+        hours = "13:45 to 21:00"
       when "Night"
-        hours = "20:45 to 07:00 LT"
+        hours = "20:45 to 07:00"
     end
     return "Remember working hours from " + hours
   end

@@ -12,4 +12,14 @@ class Request < ActiveRecord::Base
     end
   end
 
+  def self.invalid_next_day_requests
+    requests = Request.where(status: 1)
+    requests.each do |request|
+      if Shift.find_by(id: request.shift_requested_id).day == Date.today + 1 ||
+        Shift.find_by(id: request.shift_answering_id).day == Date.today + 1
+        request.update(status: 4)
+      end
+    end
+  end
+
 end
