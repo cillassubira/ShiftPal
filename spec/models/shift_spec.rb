@@ -20,7 +20,7 @@ RSpec.describe "Shift" do
 		Shift.create(day: "2016-06-05", user: @user2, slot: 3)
 
 		@shift_to_be_changed = @user1.shifts.find_by(day: "2016-06-02")
-  end
+  	end
 
   let(:available_shifts) { Shift.calculate_available_shifts(@shift_to_be_changed) }
 
