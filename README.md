@@ -1,4 +1,6 @@
-== ShiftPal
+ShiftPal
+===============
+
 
 ShiftPal is defined as the next generation of corporate calendars. It is designed to help people working rotating shifts to make their lifes a little bit easier. 
 
@@ -9,11 +11,22 @@ Let’s see how ShiftPal works:
   1. No more boring unreadable xls or complex tables. 
     ShiftPal displays your personalised calendar, with your shift days in a very easy way to understand which is your availability.
 
-    ![Screenshot Calendar](https://github.com/cillassubira/ShiftPal/tree/master/screenshotsShiftPalReadme_1.png)
+    ![Screenshot Calendar](screenshots/ShiftPalReadme_1.png)
   
   2. No more “engineering of changes”, guessing who can change a shift you need, whatsapping your colleagues or negotiating the shift to be returned.
     ShiftPal allows you to select a shift, calculates who of your colleagues is available, and suggests you which shifts you can return in exchange. You can send as many requests as you want, only the first one accepted will be valid. Other options will be cancelled. 
+
+    ![Screenshot Calendar](screenshots/ShiftPalReadme_2.png)
+
+
   3. No more emails to check with your manager if your changes fulfil all conditions or if incompatibilities are respected. 
     ShiftPal algorithm only allows a request for change if resting rates are ensured.
 
+    ![Screenshot Calendar](screenshots/ShiftPalReadme_3.png)
+
   4. Check your inbox to see if your requests have been accepted or rejected or accept and reject other’s. See how changes are immediately updated on your calendar.
+
+  	![Screenshot Calendar](screenshots/ShiftPalReadme_3.png)
+
+Now, just enjoy your free time!
+
