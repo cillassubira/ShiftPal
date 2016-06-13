@@ -9,7 +9,7 @@ Let’s see how ShiftPal works:
   1. No more boring unreadable xls or complex tables. 
     ShiftPal displays your personalised calendar, with your shift days in a very easy way to understand which is your availability.
 
-    ![Screenshot Calendar](screenshots/ShiftPalReadme_1.png)
+    ![Screenshot Calendar](https://github.com/cillassubira/ShiftPal/tree/master/screenshotsShiftPalReadme_1.png)
   
   2. No more “engineering of changes”, guessing who can change a shift you need, whatsapping your colleagues or negotiating the shift to be returned.
     ShiftPal allows you to select a shift, calculates who of your colleagues is available, and suggests you which shifts you can return in exchange. You can send as many requests as you want, only the first one accepted will be valid. Other options will be cancelled. 
