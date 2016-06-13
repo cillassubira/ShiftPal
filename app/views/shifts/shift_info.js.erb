@@ -1,10 +1,15 @@
 var shiftId = String("<%= @shift.id %>");
-var shiftDay = String("<%= @shift.day %>")
-//refactorize to function 
+var shiftDay = String("<%= @shift.day %>");
+
 var today = new Date().setHours(0,0,0,0);
-var shiftDateSplit = shiftDay.split("-");
-var shiftDate = new Date(shiftDateSplit[0], shiftDateSplit[1] - 1, shiftDateSplit[2]);
-var shiftDateNum = shiftDate.setHours(0,0,0,0);
+var shiftDateNum = calculateShiftDateNum(shiftDay);
+
+function calculateShiftDateNum(shiftDay){
+	var shiftDateSplit = shiftDay.split("-");
+	var shiftDate = new Date(shiftDateSplit[0], shiftDateSplit[1] - 1, shiftDateSplit[2]);
+	return shiftDate.setHours(0,0,0,0);
+}
+
 
 $(document).ready(function() {
 	
