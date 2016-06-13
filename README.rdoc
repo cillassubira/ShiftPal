@@ -1,28 +1,17 @@
-== README
+== ShiftPal
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ShiftPal is defined as the next generation of corporate calendars. It is designed to help people working rotating shifts to make their lifes a little bit easier. 
 
-Things you may want to cover:
+In the example below, an standard roster has been defined for a staff of 10 employees (2 Morning Shifts - 2 Afternoon Shifts - 2 Night Shifts - 4 Free Days) and incompatibilities between them have been settled (i.e. After a Night shift, no Morning or Afternoon shifts are allowed.)
 
-* Ruby version
+Let’s see how ShiftPal works:
+  
+  1. No more boring unreadable xls or complex tables. 
+    ShiftPal displays your personalised calendar, with your shift days in a very easy way to understand which is your availability.
+  
+  2. No more “engineering of changes”, guessing who can change a shift you need, whatsapping your colleagues or negotiating the shift to be returned.
+    ShiftPal allows you to select a shift, calculates who of your colleagues is available, and suggests you which shifts you can return in exchange. You can send as many requests as you want, only the first one accepted will be valid. Other options will be cancelled. 
+  3. No more emails to check with your manager if your changes fulfil all conditions or if incompatibilities are respected. 
+    ShiftPal algorithm only allows a request for change if resting rates are ensured.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+  4. Check your inbox to see if your requests have been accepted or rejected or accept and reject other’s. See how changes are immediately updated on your calendar.
