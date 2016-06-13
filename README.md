@@ -26,7 +26,7 @@ Let’s see how ShiftPal works:
 
   4. Check your inbox to see if your requests have been accepted or rejected or accept and reject other’s. See how changes are immediately updated on your calendar.
 
-  	![Screenshot Calendar](screenshots/ShiftPalReadme_3.png)
+  	![Screenshot Calendar](screenshots/ShiftPalReadme_4.png)
 
 Now, just enjoy your free time!
 
